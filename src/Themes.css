@@ -59,7 +59,11 @@ input {
 
 .checkbox {
     height: 20px;
+}
 
+.listitem {
+    max-width: 50vw;
+    word-wrap: break-word;
 }
 
 label {
@@ -69,25 +73,16 @@ label {
     height: 52px;
     margin-left: 10vw;
     margin-right: 10vw;
-    max-width: 80vw;
 }
 
 label input[type="checkbox"] {
-    margin: 0;
+    position: absolute;
+    left: -125px;
 }
 
 
 label button {
     margin-right: 3rem;
-}
-
-
-label {
-    width: 90vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    border: 1rem;
-    border-color: var(--border-color);
 }
 
 .footer p {
