@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header.tsx";
-import './Themes.css'
-import styled from 'styled-components';
+import "./Themes.css";
 
 interface TodoItem {
   id: number;
@@ -10,60 +9,42 @@ interface TodoItem {
 }
 
 const App: React.FC = () => {
-  const [theme, setTheme] = useState("light");
-
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [todoList, setTodoList] = useState<TodoItem[]>(() => {
+    const storedTodoList = localStorage.getItem("todoList");
+    return storedTodoList ? JSON.parse(storedTodoList) : [];
+  });
+  
   const handleThemeChange = () => {
-    setTheme(prevTheme => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
-
-
+  
   const onThemeChange = () => {
     handleThemeChange();
   };
-
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.remove("light-theme", "dark-theme");
-    root.classList.add(`${theme}-theme`);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-
-  useEffect(() => {
-    const storedTodoList = localStorage.getItem("todoList");
-    const storedTheme = localStorage.getItem("theme");
-
-    if (storedTodoList) {
-      setTodoList(JSON.parse(storedTodoList));
-    }
-
-    if (storedTheme) {
-      setTheme(storedTheme);
-    }
-  }, []);
-
-
-
-  const [todoList, setTodoList] = useState<TodoItem[]>([]);
-  const [newTodoText, setNewTodoText] = useState("");
-
-  useEffect(() => {
-    const storedTodoList = localStorage.getItem("todoList");
-    if (storedTodoList) {
-      setTodoList(JSON.parse(storedTodoList));
-    }
-  }, []);
-
+  
   useEffect(() => {
     localStorage.setItem("todoList", JSON.stringify(todoList));
   }, [todoList]);
+  
+  
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const root = document.documentElement;
+    root.classList.remove("light-theme", "dark-theme");
+    root.classList.add(`${theme}-theme`);
+  }, [theme]);
+  
+  
+  const [newTodoText, setNewTodoText] = useState("");
+  
 
   const addTodo = () => {
     if (newTodoText.trim() !== "") {
       const newTodo: TodoItem = {
         id: Date.now(),
         text: newTodoText.trim(),
-        completed: false
+        completed: false,
       };
       setTodoList([...todoList, newTodo]);
       setNewTodoText("");
@@ -71,7 +52,7 @@ const App: React.FC = () => {
   };
 
   const toggleTodo = (id: number) => {
-    const updatedTodoList = todoList.map(todo => {
+    const updatedTodoList = todoList.map((todo) => {
       if (todo.id === id) {
         return { ...todo, completed: !todo.completed };
       }
@@ -81,12 +62,9 @@ const App: React.FC = () => {
   };
 
   const removeTodo = (id: number) => {
-    const updatedTodoList = todoList.filter(todo => todo.id !== id);
+    const updatedTodoList = todoList.filter((todo) => todo.id !== id);
     setTodoList(updatedTodoList);
   };
-
-  const [filter, setFilter] = useState('all');
-
 
   return (
     <div>
@@ -95,16 +73,16 @@ const App: React.FC = () => {
         <input
           type="text"
           value={newTodoText}
-          placeholder='What do you need to do?'
-          onChange={e => setNewTodoText(e.target.value)}
-          onKeyPress={e => {
+          placeholder="What do you need to do?"
+          onChange={(e) => setNewTodoText(e.target.value)}
+          onKeyPress={(e) => {
             if (e.key === "Enter") {
               addTodo();
             }
           }}
         />
         <ul>
-          {todoList.map(todo => (
+          {todoList.map((todo) => (
             <li key={todo.id}>
               <label>
                 <input
@@ -116,21 +94,23 @@ const App: React.FC = () => {
                 <span
                   className="listitem"
                   style={{
-                    textDecoration: todo.completed ? "line-through" : "none"
+                    textDecoration: todo.completed
+                      ? "line-through"
+                      : "none",
                   }}
                 >
                   {todo.text}
                 </span>
-                <button onClick={() => removeTodo(todo.id)}>X</button>
+                <div className="removebutton">
+                  <button onClick={() => removeTodo(todo.id)}>X</button>
+                </div>
               </label>
             </li>
           ))}
         </ul>
-
         <div>
           <div className="footer">
             <p>Click the checkbox on the left to mark it complete. Hit the X on the right to remove it from list.</p>
-
           </div>
         </div>
         <br />
