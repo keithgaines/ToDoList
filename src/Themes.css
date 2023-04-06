@@ -1,8 +1,9 @@
 .light-theme {
     /* Light Theme */
     --bg-color: #ffffff;
-    --text-color: #333333;
-    --button-text-color: #ffffff;
+    --text-color: #494C6B;
+    --todo-color: #FFFFFF;
+    --button-text-color: #FFFFFF;
     --background-image: url('../public/images/bg-mobile-light.jpg');
 }
 
@@ -22,9 +23,13 @@ body {
     background-repeat: no-repeat;
 }
 
+h1 {
+    color: var(--todo-color);
+}
+
 button {
     background-color: var(--button-bg-color);
-    color: var(--button-text-color);
+    color: var(--text-color);
     background-color: none;
     border-radius: 0;
     border: none;
@@ -82,7 +87,7 @@ label input[type="checkbox"] {
 
 
 label button {
-    margin-right: 3rem;
+    margin-right: 1rem;
 }
 
 .footer p {
