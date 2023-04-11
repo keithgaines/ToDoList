@@ -33,28 +33,26 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/to-do-list-local-storage-oY8Z7AmP2h]
+- Solution URL: https://www.frontendmentor.io/solutions/to-do-list-local-storage-oY8Z7AmP2h
 - Live Site URL: https://todolisttsx.vercel.app
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
+- React
 - Flexbox
 - Mobile-first workflow
-- JQuery
 - Bootstrap
 - JavaScript Local Storage
 
 ### What I learned
 
-Through completing the To Do List project, I gained experience working with JavaScript, jQuery, and localStorage. I learned how to add event listeners and handle form submissions, dynamically create and modify HTML elements, and store and retrieve data using localStorage. I also developed problem-solving skills and learned how to effectively use console.log and other debugging techniques to troubleshoot issues. Overall, this project provided a great opportunity to apply my programming knowledge in a practical way and further develop my skills.
+Through completing the To Do List project, I gained experience working with JavaScript and localStorage. I learned how to add event listeners and handle form submissions, dynamically create and modify HTML elements, and store and retrieve data using localStorage. I also developed problem-solving skills and learned how to effectively use console.log and other debugging techniques to troubleshoot issues. Overall, this project provided a great opportunity to apply my programming knowledge in a practical way and further develop my skills.
 
 ### Continued development
 
-As part of my continued development, I aim to deepen my understanding of jQuery and DOM manipulation. I have found that these skills are essential for developing dynamic and interactive web applications. By further developing my knowledge in these areas, I hope to be able to build more complex and sophisticated web applications that provide a better user experience. I plan to continue practicing my skills in jQuery and DOM manipulation by working on projects that challenge me and push my understanding of these topics.
+As part of my continued development, I aim to deepen my understanding of JavaScript and DOM manipulation. I have found that these skills are essential for developing dynamic and interactive web applications. By further developing my knowledge in these areas, I hope to be able to build more complex and sophisticated web applications that provide a better user experience. I plan to continue practicing my skills in jQuery and DOM manipulation by working on projects that challenge me and push my understanding of these topics.
 
 ## Author
 
