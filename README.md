@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://www.frontendmentor.io/solutions/to-do-list-local-storage-oY8Z7AmP2h]
-- Live Site URL: [https://keithgaines.github.io/todolist/]
+- Live Site URL: https://todolisttsx.vercel.app
 
 ## My process
 
