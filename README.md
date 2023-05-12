@@ -56,7 +56,7 @@ As part of my continued development, I aim to deepen my understanding of JavaScr
 ## Author
 
 - Website - [Keith Gaines](https://keithgaines.github.io)
-- Frontend Mentor - [@keithgaines] (https://www.frontendmentor.io/profile/keithgaines)
+- Frontend Mentor - [@keithgaines](https://www.frontendmentor.io/profile/keithgaines)
 
 
 ## Acknowledgments
